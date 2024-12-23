@@ -1,7 +1,7 @@
 // model basiclly set as variable and there datatype -like table 
 const mongoose = require('mongoose');
 
-const userSchema = mongoose.Schema({
+const ownerSchema = mongoose.Schema({
     fullname : {
         type : String,
         minLength :3,
@@ -9,17 +9,12 @@ const userSchema = mongoose.Schema({
     },
     email : String,
     password : String,
-    cart : {
-        type : Array,
-        default : [],
-    },
-    isadmin : Boolean,
-    orders : {
+    products : {
         type : Array,
         default : []
     },
-    contact : Number,
     picture : String,
+    gstin : String,
 });
 
-module.exports = mongoose.module("user",userSchema);
+module.exports = mongoose.module("owner",ownerSchema);
